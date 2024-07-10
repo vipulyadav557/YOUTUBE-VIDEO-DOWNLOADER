@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles for the navbar */
+    .navbar {
+      background-color: #f8f9fa;
+      /* Light grey background */
+      padding: 10px 0;
+      /* Add some padding */
+      marginLeft: 10px;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      /* Make the brand text bold */
+    }
+    .navbar-nav .nav-link {
+      color: #333;
+      /* Darken the link color */
+      font-weight: bold;
+      /* Make the link text bold */
+    }
+    .navbar-nav .nav-link:hover {
+      color: #007bff;
+      /* Change link color on hover */
+    }
+
+
+    .section-content {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .section-header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 3px;
+      background-color: #333;
+      margin: 0 auto 2rem;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1;
+      max-width: 300px;
+      padding: 20px;
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .card .icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f3f4f6;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .learn-more {
+      color: #3f83f8;
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .learn-more:hover {
+      color: #1e3de4;
+    }
+
+    .cta-button {
+      margin-top: 3rem;
+      padding: 10px 30px;
+      background-color: #3f83f8;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.125rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #1e3de4;
+    }
+
+
+
+
+
+    .text-gray-600 {
+      color: #6a737d;
+    }
+
+    .body-font {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .title-font {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .sm {
+      small:
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .text-base {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+    }
+
+    .leading-relaxed {
+      line-height: 1.75;
+    }
+
+    .xl {
+      @media (max-width: 1280px) {
+      /* styles here */
+    }
+  }
+
+  .lg {
+    @media (max-width: 1024px) {
+    /* styles here */
+  }
+}
+
+.sm {
+  @media (max-width: 768px) {
+  /* styles here */
+}
+}
+
+.flex {
+display: flex;
+}
+
+.flex-wrap {
+flex-wrap: wrap;
+}
+
+.lg\:w-4/5 {
+@media (min-width: 1024px) {
+width: 80%;
+}
+}
+
+.sm\:mx-auto {
+@media (min-width: 640px) {
+margin-left: auto;
+margin-right: auto;
+}
+}
+
+.sm\:mb-2 {
+@media (min-width: 640px) {
+margin-bottom: 0.5rem;
+}
+}
+
+.-mx-2 {
+margin-left: -1rem;
+margin-right: -1rem;
+}
+
+.p-2 {
+padding: 1rem;
+}
+
+.sm\:w-1/2 {
+@media (min-width: 640px) {
+width: 50%;
+}
+}
+
+.w-full {
+width: 100%;
+}
+
+.bg-gray-100 {
+background-color: #f3f4f6;
+}
+
+.rounded {
+border-radius: 0.25rem;
+}
+
+.flex-shrink-0 {
+flex-shrink: 0;
+}
+
+.mr-4 {
+margin-right: 1rem;
+}
+
+.text-indigo-500 {
+color: #4f46e5;
+}
+
+.w-6 {
+width: 1.5rem;
+height: 1.5rem;
+}
+
+.h-6 {
+height: 1.5rem;
+}
+
+.items-center {
+align-items: center;
+}
+
+.p-4 {
+padding: 1rem;
+}
+
+.hover\:bg-indigo-600 {
+&: hover {
+background-color: #4f46e5;
+}
+}
+
+.bg-indigo-500 {
+background-color: #4f46e5;
+}
+
+.border-0 {
+border-width: 0;
+}
+
+.py-2 {
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+
+.px-8 {
+padding-left: 2rem;
+padding-right: 2rem;
+}
+
+.focus\:outline-none {
+outline: none;
+}
+
+.text-lg {
+font-size: 1.125rem;
+line-height: 1.75rem;
+}
+
+
+/* Global Styles */
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f9f9f9;
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">writer-vipul</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav">
+<li class="nav-item active">
+<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Features</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Pricing</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Dropdown link
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+
+
+<section class="section-content">
+<div class="container">
+<div class="section-header">
+<h1>Raw Denim Heirloom Man Braid</h1>
+<p>
+Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.
+</p>
+<div class="divider"></div>
+</div>
+<div class="card-container">
+<div class="card">
+<div class="icon">
+<svg class="w-10 h-10" viewBox="0 0 24 24">
+<path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+</svg>
+</div>
+<h2>Shooting Stars</h2>
+<p>
+Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+</p>
+<a href="#" class="learn-more">Learn More</a>
+</div>
+<div class="card">
+<div class="icon">
+<svg class="w-10 h-10" viewBox="0 0 24 24">
+<circle cx="6" cy="6" r="3"></circle>
+<circle cx="6" cy="18" r="3"></circle>
+<path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+</svg>
+</div>
+<h2>The Catalyzer</h2>
+<p>
+Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+</p>
+<a href="#" class="learn-more">Learn More</a>
+</div>
+<div class="card">
+<div class="icon">
+<svg class="w-10 h-10" viewBox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<h2>Neptune</h2>
+<p>
+Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.
+</p>
+<a href="#" class="learn-more">Learn More</a>
+</div>
+</div>
+<button class="cta-button">Button</button>
+</div>
+</section>
+
+
+
+
+
+<section class="text-gray-600 body-font">
+<div class="container px-5 py-24 mx-auto">
+<div class="text-center mb-20">
+<h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Raw Denim Heirloom Man Braid</h1>
+<p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.
+</p>
+</div>
+<div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">Authentic Cliche Forage</span>
+</div>
+</div>
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">Kinfolk Chips Snackwave</span>
+</div>
+</div>
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">Coloring Book Ethical</span>
+</div>
+</div>
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">Typewriter Polaroid Cray</span>
+</div>
+</div>
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">Pack Truffaut Blue</span>
+</div>
+</div>
+<div class="p-2 sm:w-1/2 w-full">
+<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+<path d="M22 4L12 14.01l-3-3"></path>
+</svg>
+<span class="title-font font-medium">The Catcher In The Rye</span>
+</div>
+</div>
+</div>
+<button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+</div>
+</section>
+
+
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f0f0f0;
+}
+
+.banner {
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px 0;
+}
+
+.container {
+max-width: 100%;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+}
+
+h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+width: 80%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+button {
+width: 400px;
+padding: 12px;
+background-color: #4caf50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<div class="banner">
+<!-- Placeholder for kgsflink banner -->
+<img src="https://github.com/vipulyadav557/YOUTUBE-VIDEO-DOWNLOADER.git" alt="writer-vipul banner">
+</div>
+<div class="container">
+<h1>YouTube Downloader</h1>
+<input type="text" id="videoUrl" placeholder="Paste YouTube Video URL">
+<select id="qualitySelect">
+<option value="highest">Highest Quality</option>
+<option value="medium">Medium Quality</option>
+<option value="lowest">Lowest Quality</option>
+</select>
+<button onclick="downloadVideo()">Download</button>
+</div>
+
+<script>
+function downloadVideo() {
+var videoUrl = document.getElementById('videoUrl').value;
+var quality = document.getElementById('qualitySelect').value;
+// Send video URL and quality to backend for downloading
+fetch(`/download?videoUrl=${encodeURIComponent(videoUrl)}&quality=${quality}`)
+.then(response => response.blob())
+.then(blob => {
+// Create a link to download the video
+var url = window.URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = 'video.mp4';
+document.body.appendChild(a);
+a.click();
+window.URL.revokeObjectURL(url);
+})
+.catch(error => console.error('Error downloading video:', error));
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap JS (Optional, only if you need dropdown functionality) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+  </html>
